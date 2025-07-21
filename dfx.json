@@ -11,19 +11,15 @@
       "type": "custom",
       "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
     },
-    "vera-web3-backend": {
-      "main": "src/vera-web3-backend/main.mo",
-      "type": "motoko"
+    "user_manager": {
+      "main": "src/vera-web3-backend/user_manager/main.mo",
+      "type": "motoko",
+      "dependencies": []
     },
-    "vera-web3-frontend": {
-      "dependencies": [
-        "vera-web3-backend"
-      ],
-      "source": [
-        "src/vera-web3-frontend/dist"
-      ],
-      "type": "assets",
-      "workspace": "vera-web3-frontend"
+    "recipient_manager": {
+      "main": "src/vera-web3-backend/recipient_manager/main.mo",
+      "type": "motoko",
+      "dependencies": ["user_manager"]
     }
   },
   "defaults": {
