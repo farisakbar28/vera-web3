@@ -1,0 +1,115 @@
+/* src/pages/RecipientDashboard.module.scss */
+/* File ini HANYA berisi style untuk komponen dashboard penerima. */
+
+/* --- Styling untuk Dashboard --- */
+.dashboardContainer {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboardHeader {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  
+  h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .userProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+.statusBadge {
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+}
+
+/* --- Styling untuk Tabel Riwayat --- */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto; /* Agar bisa di-scroll di layar kecil */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  th {
+    font-weight: 600;
+    color: #555;
+    background-color: #fafafa;
+  }
+
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+}
+
+.statusChipSuccess {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.statusBadgePending {
+  background-color: #ffc107; // Warna kuning untuk status menunggu
+  color: #333;
+}
+
+.statusBadgeRejected {
+  background-color: #dc3545; // Warna merah untuk status ditolak
+}
+
+.statusInfoCard {
+  text-align: center;
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+}
