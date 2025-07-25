@@ -1,0 +1,148 @@
+/* src/components/recipient/ApplicationForm.module.scss */
+/* File ini HANYA berisi style untuk komponen formulir. */
+
+// --- Variabel Lokal untuk Komponen Ini ---
+$primary-color: #007bff;
+$primary-color-hover: #0056b3;
+$text-color: #333;
+$label-color: #555;
+$border-color: #ccc;
+$form-background: #ffffff;
+$error-color: #dc3545;
+$success-color: #28a745;
+$disabled-color: #c0c0c0;
+
+// --- Kontainer Utama Formulir ---
+.applicationFormContainer {
+  background-color: $form-background;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+  margin-top: 20px;
+
+  h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: $text-color;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .formGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    label {
+      font-weight: 500;
+      color: $label-color;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .fileUploadArea {
+      border: 2px dashed $border-color;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: border-color 0.3s;
+
+      .fileUploadLabel {
+        cursor: pointer;
+        color: $primary-color;
+        font-weight: 500;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      p {
+        margin: 0.5rem 0 0 0;
+        font-size: 0.875rem;
+        color: #888;
+      }
+      
+      .fileName {
+        margin-top: 1rem;
+        color: $success-color;
+        font-weight: 500;
+      }
+    }
+
+    .formActions {
+      // Hanya sebagai pembungkus, tidak perlu flex
+      width: 100%;
+      margin-top: 1rem;
+      text-align: center; // Menengahkan teks pesan status
+    }
+
+    .submitButton {
+      // --- PERUBAHAN DI SINI ---
+      display: block;      // 1. Jadikan elemen block
+      width: 50%;          // 2. Atur lebarnya
+      margin: 0 auto 1rem; // 3. Tengahkan secara horizontal dan beri margin bawah
+
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background-color: $primary-color;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $primary-color-hover;
+      }
+
+      &:disabled {
+        background-color: $disabled-color;
+        cursor: not-allowed;
+      }
+    }
+
+    .statusMessage {
+      font-weight: 500;
+      &.success {
+        color: $success-color;
+      }
+      &.error {
+        color: $error-color;
+      }
+    }
+  }
+}
